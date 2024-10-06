@@ -8,9 +8,10 @@ group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(23)
-    }
+    sourceCompatibility = JavaVersion.VERSION_17
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(17)
+//    }
 }
 
 repositories {
@@ -19,7 +20,8 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
-    implementation("org.springframework.kafka:spring-kafka")
+    implementation ("org.apache.kafka:kafka-clients:3.4.0")
+//    implementation("org.springframework.kafka:spring-kafka")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
